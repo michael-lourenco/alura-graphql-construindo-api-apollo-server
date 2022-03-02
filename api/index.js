@@ -1,6 +1,27 @@
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer, gql } = require('apollo-server');
+
+const users = [
+    {
+        nome: "Ana",
+        ativo: true,
+    },
+    {
+        nome: "Marcia",
+        ativo: false,
+    }
+]
+
+// SDL
+const typeDefs = gql`
+    type User {
+        nome: String!
+        ativo: Boolean!
+        email: String
+    }
+`;
+
 
 const server = new ApolloServer({
-    typeDefs: './src/schema.graphql',
-    resolvers: './src/resolvers.js',
+    typeDefs,
+    resolvers,
 });
