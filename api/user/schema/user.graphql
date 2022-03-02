@@ -8,7 +8,7 @@ const userSchema = gql`
     }
 
     type Query {
-        user(id: Int!): User
+        primeiroUser: User
         users: [User]
     }
 `;
