@@ -11,7 +11,7 @@ class UsersAPI extends RESTDataSource {
     }
 
     async getUserById(id) {
-        return this.get(`/${id}`);
+        return this.get(`/users/${id}`);
     }
 
     async createUser(user) {
