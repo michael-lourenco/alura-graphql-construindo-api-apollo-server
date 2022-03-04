@@ -1,4 +1,3 @@
-
 const userResolvers = {
     Query: {
         users: (root, args, { dataSources }) =>{
