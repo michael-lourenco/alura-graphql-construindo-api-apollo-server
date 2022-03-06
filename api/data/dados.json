@@ -61,27 +61,6 @@
       "email": "t@t.com",
       "role": 1,
       "id": 9
-    },
-    {
-      "nome": "Novo",
-      "ativo": true,
-      "email": "t@t.com",
-      "role": 1,
-      "id": 10
-    },
-    {
-      "nome": "Novo",
-      "ativo": true,
-      "email": "t@t.com",
-      "role": 1,
-      "id": 11
-    },
-    {
-      "nome": "Novo",
-      "ativo": true,
-      "email": "t@t.com",
-      "role": 1,
-      "id": 12
     }
   ],
   "roles": [

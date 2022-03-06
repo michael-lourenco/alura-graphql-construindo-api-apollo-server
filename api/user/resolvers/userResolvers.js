@@ -8,11 +8,14 @@ const userResolvers = {
         },
     },
     Mutation: {
-        createUser: (root, user, { dataSources }) => {
+        createUser: async (root, user, { dataSources }) => {
             return dataSources.usersAPI.createUser(user);
         },
-        updateUser: (root, { id, input }, { dataSources }) => {
-            return dataSources.usersAPI.updateUser(id, input);
+        updateUser: async (root, newData, { dataSources }) => {
+            return dataSources.usersAPI.updateUser(newData);
+        },
+        deleteUser: async (root, { id }, { dataSources }) => {
+            return dataSources.usersAPI.deleteUser(id);
         },
     },
 };
