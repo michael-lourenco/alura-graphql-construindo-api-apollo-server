@@ -29,13 +29,6 @@
       "role": 2
     },
     {
-      "id": 5,
-      "nome": "Silvia Souza",
-      "ativo": true,
-      "email": "s@s.com",
-      "role": 2
-    },
-    {
       "id": 6,
       "nome": "Marcia Silva",
       "ativo": true,
@@ -74,7 +67,7 @@
       "nome": "Novo Alterado",
       "ativo": true,
       "email": "t@t.com",
-      "role": 1,
+      "role": 2,
       "id": 11
     },
     {
