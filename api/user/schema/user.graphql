@@ -5,7 +5,13 @@ scalar DateTime
 
     type Role {
         id: ID!
-        type: String!
+        type: RolesType!
+    }
+
+    enum RolesType{
+        ESTUDANTE
+        DOCENTE
+        COORDENACAO
     }
 
     type User {
@@ -22,8 +28,8 @@ scalar DateTime
     }
 
     type Mutation {
-        createUser(nome: String!, ativo: Boolean!, email: String, role: String!, createdAt: DateTime): User!
-        updateUser(id: ID!, nome: String, ativo: Boolean!, email: String, role: String!): User!
+        createUser(nome: String!, ativo: Boolean!, email: String, role: RolesType!, createdAt: DateTime): User!
+        updateUser(id: ID!, nome: String, ativo: Boolean!, email: String, role: RolesType!): User!
         deleteUser(id: ID!): ID!
     }
 `;

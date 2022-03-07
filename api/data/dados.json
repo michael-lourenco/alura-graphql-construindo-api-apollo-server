@@ -69,6 +69,22 @@
       "role": 1,
       "createdAt": "2022-03-07T00:00:00.000Z",
       "id": 10
+    },
+    {
+      "nome": "Novo",
+      "ativo": true,
+      "email": "t@t.com",
+      "role": 1,
+      "createdAt": "2022-03-07T00:00:00.000Z",
+      "id": 11
+    },
+    {
+      "nome": "Novo",
+      "ativo": true,
+      "email": "t@t.com",
+      "role": 2,
+      "createdAt": "2022-03-07T00:00:00.000Z",
+      "id": 12
     }
   ],
   "roles": [
