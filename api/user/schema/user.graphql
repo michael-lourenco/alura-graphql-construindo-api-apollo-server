@@ -22,14 +22,22 @@ scalar DateTime
         createdAt: DateTime
     }
 
+    input UserInput {
+        nome: String
+        ativo: Boolean
+        email: String
+        role: RolesType
+        createdAt: DateTime
+    }
+
     type Query {
         users: [User]
         user(id: ID!): User!
     }
 
     type Mutation {
-        createUser(nome: String!, ativo: Boolean!, email: String, role: RolesType!, createdAt: DateTime): User!
-        updateUser(id: ID!, nome: String, ativo: Boolean!, email: String, role: RolesType!): User!
+        createUser(user: UserInput): User!
+        updateUser(id: ID!, user: UserInput): User!
         deleteUser(id: ID!): ID!
     }
 `;
