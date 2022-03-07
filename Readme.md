@@ -8,7 +8,7 @@ Este projeto engloba 1(um) curso realizado através da plataforma [Alura](https:
  - `API`
 
 ## React: Automatizando os testes em aplicações front-end
-### Instrutor: [Eduarda Scharnhorst](https://www.linkedin.com/in/dudaschar/)
+### Instrutor: [Juliana Amoasei](https://github.com/JulianaAmoasei)
 
 Conhecimentos adquiridos:
  - Entender como o GraphQL funciona, quais são seus atributos principais e como construir sua API a partir deles
