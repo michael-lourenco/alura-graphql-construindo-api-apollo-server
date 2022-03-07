@@ -1,4 +1,4 @@
-const { GraphQLScalarType } = require('graphql');
+const { GraphQLScalarType } = require("graphql");
 
 const userResolvers = {
     RolesType: {
@@ -7,8 +7,8 @@ const userResolvers = {
         COORDENACAO: "COORDENACAO",
     },
     DateTime: new GraphQLScalarType({
-        name: 'DateTime',
-        description: 'string de data e hora no formato ISO-8601',
+        name: "DateTime",
+        description: "string de data e hora no formato ISO-8601",
         serialize: (value) => value.toISOString(),
         parseValue: (value) => new Date(value),
         parseLiteral: (ast) => new Date(ast.value),
