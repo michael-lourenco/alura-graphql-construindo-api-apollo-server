@@ -29,6 +29,13 @@
       "role": 2
     },
     {
+      "id": 5,
+      "nome": "Silvia Souza",
+      "ativo": true,
+      "email": "s@s.com",
+      "role": 2
+    },
+    {
       "id": 6,
       "nome": "Marcia Silva",
       "ativo": true,
@@ -36,55 +43,28 @@
       "role": 2
     },
     {
-      "nome": "Novo",
+      "nome": "Marina Souza",
       "ativo": true,
-      "role": 1,
+      "email": "l@l.com.br",
+      "role": 2,
+      "createdAt": "2020-09-22T00:00:00.000Z",
       "id": 7
     },
     {
-      "nome": "Novo",
+      "nome": "Marina Souza",
       "ativo": true,
-      "email": "t@t.com",
-      "role": 1,
+      "email": "l@l.com.br",
+      "role": 2,
+      "createdAt": "2020-09-22T00:00:00.000Z",
       "id": 8
     },
     {
-      "nome": "Novo",
-      "ativo": true,
-      "email": "t@t.com",
-      "role": 1,
+      "nome": "Ricardo Chaves",
+      "ativo": false,
+      "email": "s@s.com.br",
+      "role": 2,
+      "createdAt": "2020-09-22T00:00:00.000Z",
       "id": 9
-    },
-    {
-      "nome": "Novo",
-      "ativo": true,
-      "email": "t@t.com",
-      "role": 1,
-      "createdAt": "2022-03-07T00:00:00.000Z",
-      "id": 10
-    },
-    {
-      "nome": "Novo Alterado",
-      "ativo": true,
-      "email": "t@t.com",
-      "role": 2,
-      "id": 11
-    },
-    {
-      "nome": "Novo",
-      "ativo": true,
-      "email": "t@t.com",
-      "role": 2,
-      "createdAt": "2022-03-07T00:00:00.000Z",
-      "id": 12
-    },
-    {
-      "nome": "Teste",
-      "ativo": true,
-      "email": "t@t.com",
-      "role": 2,
-      "createdAt": "2022-03-07T00:00:00.000Z",
-      "id": 13
     }
   ],
   "roles": [

@@ -1,61 +1,62 @@
-const { gql } = require("apollo-server");
+const { gql } = require('apollo-server')
 
-const userSchema = gql`
+const userSchema = gql `
 scalar DateTime
 
-    type Role {
-        id: ID!
-        type: RolesType!
-    }
+  type User {
+    nome: String!
+    ativo: Boolean!
+    email: String
+    role: Role!
+    createdAt: DateTime
+  }
 
-    enum RolesType{
-        ESTUDANTE
-        DOCENTE
-        COORDENACAO
-    }
+  input UserInput {
+    nome: String
+    ativo: Boolean
+    email: String
+    role: RolesType
+    createdAt: DateTime
+  }
 
-    type User {
-        nome: String!
-        ativo: Boolean!
-        email: String
-        role: Role!
-        createdAt: DateTime
-    }
+  type Role {
+    id: ID!
+    type: RolesType!
+  }
 
-    input UserInput {
-        nome: String
-        ativo: Boolean
-        email: String
-        role: RolesType
-        createdAt: DateTime
-    }
+  enum RolesType {
+    ESTUDANTE
+    DOCENTE
+    COORDENACAO
+  }
 
-    type Query {
-        users: [User]
-        user(id: ID!): User!
-    }
+  type Query {
+    users: [User]
+    user(id: ID!): User!
+  }
 
-    type Mutation {
-        createUser(user: UserInput): User!
-        updateUser(id: ID!, user: UserInput): updateUserAnswer!
-        deleteUser(id: ID!): deleteUserAnswer!
-    }
+  type Mutation {
+    adicionaUser(user: UserInput): User!
+    atualizaUser(id: ID!, user: UserInput): atualizaUserResposta!
+    deletaUser(id: ID!): deletaUserResposta!
+  }
 
-    interface customAnswer {
-        code: Int!
-        message: String!
-    }
+  interface respostaCustom {
+    code: Int!
+    mensagem: String!
+  }
 
-    type deleteUserAnswer implements customAnswer {
-        code: Int!
-        message: String!
-    }
+  type deletaUserResposta implements respostaCustom {
+    code: Int!
+    mensagem: String!
+  }
 
-    type updateUserAnswer implements customAnswer {
-        code: Int!
-        message: String!
-        user: User!
-    }
-`;
+  type atualizaUserResposta implements respostaCustom {
+    code: Int!
+    mensagem: String!
+    userAtualizado: User!
+  }
 
-module.exports = userSchema;
+`
+
+module.exports = userSchema
