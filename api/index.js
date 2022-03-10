@@ -4,10 +4,10 @@ const path = require('path');
 
 const { userSchema, userResolvers, UsersAPI } = require('./user');
 const { turmaSchema, turmaResolvers, TurmasAPI } = require('./turma');
-const { matriculaSchema } = require('./matricula');
+const { matriculaSchema, matriculaResolvers, MatriculasAPI } = require('./matricula');
 
 const typeDefs = mergeTypeDefs([matriculaSchema, turmaSchema, userSchema])
-const resolvers = [turmaResolvers, userResolvers]
+const resolvers = [matriculaResolvers, turmaResolvers, userResolvers]
 
 const dbConfig = {
   client: 'sqlite3',
@@ -22,6 +22,7 @@ const server = new ApolloServer( {
   resolvers,
   dataSources: () => {
     return {
+      matriculasAPI: new MatriculasAPI(dbConfig),
       turmasAPI: new TurmasAPI(dbConfig),
       usersAPI: new UsersAPI(),
     }
