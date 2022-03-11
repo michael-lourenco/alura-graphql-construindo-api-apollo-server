@@ -1,13 +1,13 @@
-const { ApolloServer } = require('apollo-server');
-const { mergeTypeDefs } = require('graphql-tools');
-const path = require('path');
+const { ApolloServer } = require('apollo-server')
+const { mergeTypeDefs } = require('graphql-tools')
+const path = require('path')
 
-const { userSchema, userResolvers, UsersAPI } = require('./user');
-const { turmaSchema, turmaResolvers, TurmasAPI } = require('./turma');
-const { matriculaSchema, matriculaResolvers, MatriculasAPI } = require('./matricula');
+const { userSchema, userResolvers, UsersAPI } = require('./user')
+const { turmaSchema, turmaResolvers, TurmasAPI } = require('./turma')
+const { matriculaSchema, matriculaResolvers, MatriculasAPI } = require('./matricula')
 
-const typeDefs = mergeTypeDefs([matriculaSchema, turmaSchema, userSchema])
-const resolvers = [matriculaResolvers, turmaResolvers, userResolvers]
+const typeDefs = mergeTypeDefs([userSchema, turmaSchema, matriculaSchema])
+const resolvers = [userResolvers, turmaResolvers, matriculaResolvers]
 
 const dbConfig = {
   client: 'sqlite3',
@@ -22,9 +22,9 @@ const server = new ApolloServer( {
   resolvers,
   dataSources: () => {
     return {
-      matriculasAPI: new MatriculasAPI(dbConfig),
-      turmasAPI: new TurmasAPI(dbConfig),
       usersAPI: new UsersAPI(),
+      turmasAPI: new TurmasAPI(dbConfig),
+      matriculasAPI: new MatriculasAPI(dbConfig)
     }
   },
  })
