@@ -1,9 +1,9 @@
-const { RESTDataSource } = require('apollo-datasource-rest')
+const { RESTDataSource } = require("apollo-datasource-rest")
 
 class UsersAPI extends RESTDataSource {
   constructor(){
     super()
-    this.baseURL = 'http://localhost:3000'
+    this.baseURL = "http://localhost:3000"
     this.respostaCustom = {
       code: 201,
       mensagem: "operação feita com sucesso"
@@ -31,10 +31,10 @@ class UsersAPI extends RESTDataSource {
   }
 
   async adicionaUser(user) {
-    const users = await this.get('/users')
+    const users = await this.get("/users")
     user.id = users.length + 1
     const role = await this.get(`roles?type=${user.role}`)
-    await this.post('users', {...user, role: role[0].id})
+    await this.post("users", {...user, role: role[0].id})
     return ({
       ...user,
       role: role[0]
