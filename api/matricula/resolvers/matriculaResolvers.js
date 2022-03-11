@@ -11,6 +11,8 @@ const matriculaResolvers = {
 
     Mutation: {
         createMatricula: async (_, ids, { dataSources }, info) => dataSources.matriculasAPI.createMatricula(ids),
+        deletarMatricula: (_, { matricula }, { dataSources }) => dataSources.matriculasAPI.deletarMatricula(matricula),
+        cancelarMatricula: (_, { matricula }, { dataSources }) => dataSources.matriculasAPI.cancelarMatricula(matricula),
     },
 
     Matricula: {
