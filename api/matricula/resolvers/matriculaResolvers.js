@@ -11,6 +11,11 @@ const matriculaResolvers = {
 
     Mutation: {
         createMatricula: async (_, ids, { dataSources }, info) => dataSources.matriculasAPI.createMatricula(ids),
+    },
+
+    Matricula: {
+        estudante: (parent, _, { dataSources }) => dataSources.usersAPI.getUserById(parent.estudante_id),
+        turma: (parent, _, { dataSources }) => dataSources.turmasAPI.getTurma(parent.turma_id),
     }
 }
 
