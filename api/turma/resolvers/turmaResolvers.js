@@ -20,6 +20,10 @@ const turmaResolvers = {
     deletaTurma: (_, { id }, { dataSources }) => dataSources.turmasAPI.deletaTurma(id),
   },
 
+  Turma: {
+    matriculas: (parent, _, { dataSources }) => dataSources.matriculasAPI.getMatriculasPorTurma(parent.id),
+  }
+
 }
 
 module.exports = turmaResolvers
